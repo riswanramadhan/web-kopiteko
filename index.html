@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kopi Teko - Where Coffee Meets Community</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter (Sans-serif) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, h4 {
+      font-weight: 800;
+      letter-spacing: -0.025em;
+    }
+  </style>
+<style data-purpose="custom-styling">
+    .btn-black {
+      background-color: #000;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      transition: opacity 0.2s;
+    }
+    .btn-black:hover {
+      opacity: 0.8;
+    }
+    .card-rounded {
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body class="bg-white text-black antialiased">
+<!-- BEGIN: NavigationBar -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-black flex items-center justify-center rounded-lg">
+<span class="text-white font-bold text-xs">TEKO</span>
+</div>
+<span class="text-xl font-extrabold">Kopi Teko</span>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-600">
+<a class="hover:text-black transition-colors" href="#">Home</a>
+<a class="hover:text-black transition-colors" href="#">Menu</a>
+<a class="hover:text-black transition-colors" href="#">Community</a>
+<a class="hover:text-black transition-colors" href="#">Bazar Program</a>
+<a class="hover:text-black transition-colors" href="#">Testimoni</a>
+</div>
+<!-- Action Button -->
+<div>
+<a class="btn-black rounded-full flex items-center gap-2" href="#">
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+          Find A Kopi Teko
+        </a>
+</div>
+</nav>
+</header>
+<!-- END: NavigationBar -->
+<!-- BEGIN: HeroSection -->
+<section class="w-full" data-purpose="hero">
+<div class="w-full aspect-[21/9] bg-gray-200 overflow-hidden">
+<!-- Placeholder for large hero image -->
+<img alt="Hero Image" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvYFQfKPy57XQIxj3P_u_P3lS_nBX6Gsh6-bf2bvDNrtLuGDB4uNBVGeSJCcaCt90wzD_zHt8yA4GkqhpPDoecxuR3yTC9We0onyadz3fguQvnJPxQmknnKpo85BKQZpP2LvHV7so2-ZNDeS3dfdDZ9HsQW9WgONq2sYH9tw0KDVsvyEo3rHTM2FIkMOYUOhUVsIc6tAsD-uew2SEMr40CogiXHp-rJ9zi5Wp-1QVvQCyl1X2eM8HIhn8yb5YQMzKWdWjvhhl5N8o"/>
+</div>
+</section>
+<!-- END: HeroSection -->
+<main>
+<!-- BEGIN: OurCoffeeSection -->
+<section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl">Where Coffee Meets Community</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<h3 class="text-sm font-bold uppercase tracking-widest text-gray-500">OUR COFFEE</h3>
+<h2 class="text-3xl font-extrabold leading-tight">Ngopi Bareng, Ide Mengalir</h2>
+<p class="text-gray-600 leading-relaxed max-w-lg">
+            Lebih dari sekadar tempat ngopi, ini adalah ruang untuk bertemu, berdiskusi, dan berbagi inspirasi. Nikmati kopi pilihan sambil menghabiskan waktu bersama teman, komunitas, dan organisasi kampus dalam suasana yang hangat, nyaman, dan penuh energi positif.
+          </p>
+<button class="btn-black uppercase tracking-wider">RESERV TABLE &gt;&gt;</button>
+</div>
+<div class="aspect-square bg-gray-100 card-rounded overflow-hidden">
+<img alt="Coffee Ambiance" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmFaEcKZauy8PpCAJOhr_ijWE0Sy1idqOJOgHwTCjjoYWhk7uH-vRCPcFl5YpPdbM9gJR9W8hN5IkBNwA66Rn3S7NhmkRPj7_FrFOCDDn7xxtImi_oDEhni8j0pTkn4z3gJTlP3vxazoeOrj46e5T3LwftUF6PP5JO6mJGMJeBZjvQyFo4-Dalcg9s0AccG4GljKct22jbXE5JZzPAHz48FwHaJlgu2VBcuWxxV5gOSbiXFNXRA-5LoIMVdYUs-AWMaR8Eaa_2jdc"/>
+</div>
+</div>
+</section>
+<!-- END: OurCoffeeSection -->
+<!-- BEGIN: TrustedPartners -->
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h2 class="text-2xl mb-4">Didukung Oleh Mitra Terpercaya</h2>
+<p class="text-gray-600 mb-12 max-w-2xl mx-auto">
+<strong>Kopi Teko</strong> didukung oleh mitra-mitra terpercaya untuk memberikan layanan terbaik dan mendukung pertumbuhan UMKM di Indonesia
+        </p>
+<div class="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
+<div class="aspect-video bg-gray-200 card-rounded flex items-center justify-center">
+<span class="text-gray-400 font-bold">MITRA 1</span>
+</div>
+<div class="aspect-video bg-gray-200 card-rounded flex items-center justify-center">
+<span class="text-gray-400 font-bold">MITRA 2</span>
+</div>
+<div class="aspect-video bg-gray-200 card-rounded flex items-center justify-center">
+<span class="text-gray-400 font-bold">MITRA 3</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TrustedPartners -->
+<!-- BEGIN: OurMenuSection -->
+<section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="aspect-square bg-gray-200 card-rounded order-2 md:order-1 overflow-hidden">
+<img alt="Menu Preview" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPjNfZbm0TvBu4RD-5Yj7474C1vpDa3gacXXrUZcV_6eLft7lLzOgnP2iXxvmDY2zh4Ehx7BZ9Y_Q766IKzhyOTHuhZ3mSxXh-OW62OklQniVBoQyoXa2ZAOquThZrs6pl3VUnRPzJpTtckFBybqTqNEZOcQFN1CMltlgj7wrRkl4vuzxwTa1fGe7-pT1r3SDmznK4qwSZdNBWj_syGO421R3_aMxHaInvXRbK7QltMxWcOnFrV4kwKw4HO68WWVQPxcmdpp7nqwA"/>
+</div>
+<div class="space-y-6 md:text-right order-1 md:order-2 flex flex-col items-start md:items-end">
+<h3 class="text-sm font-bold uppercase tracking-widest text-gray-500">OUR MENU</h3>
+<h2 class="text-3xl font-extrabold">Menu yang Menemani Setiap Obrolan</h2>
+<p class="text-gray-600 leading-relaxed max-w-lg md:ml-auto">
+            Pilihan kopi, minuman segar, dan camilan lezat yang sempurna untuk menemani waktu santai bersama teman dan komunitas.
+          </p>
+<button class="btn-black uppercase tracking-wider">EXPLORE MORE &gt;&gt;</button>
+</div>
+</div>
+</section>
+<!-- END: OurMenuSection -->
+<!-- BEGIN: SpaceSection -->
+<section class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h3 class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-4">SPACE SECTION</h3>
+<h2 class="text-3xl font-extrabold mb-4">Ruang Berkumpul Komunitas</h2>
+<p class="text-gray-600 mb-12">Tempat yang nyaman untuk diskusi, meeting organisasi, hingga merancang ide besar bersama teman.</p>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="space-y-4" data-purpose="space-card">
+<div class="aspect-[4/3] bg-gray-200 card-rounded overflow-hidden">
+<img alt="Study Group" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdheAeYLteB1kKO7kzNY5S76jqqtCgoWjV8qNZ3ooyfq_uKV-qp4cVb0mVNXsadonr4356bPmPUlHmM4WXTQCVhxqxqMd6YG-q1V1EhgC8_r7k_Maf4y3tOhxmw2P6NkPMwO_ej20UdxOJ3BbVB9uGYkZ2Ot_6GVCplCnXDLwomwX-_P0i_KSmKwno275iF8yMmnnWPhsKan6fMSJDU3vtPME-v06vJEQ8CgehL2bdQ_1HoBGonbRWzcZjuyB4GOODy698az-UOVE"/>
+</div>
+<p class="font-bold text-lg">Study Group</p>
+</div>
+<!-- Card 2 -->
+<div class="space-y-4" data-purpose="space-card">
+<div class="aspect-[4/3] bg-gray-200 card-rounded overflow-hidden">
+<img alt="Meeting" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAUpw3ox-rCoTh0kfUXw7pCfC9gdxL3mq_WAj4IzNK2KJFYKSVVxfH-nNfe-0KPJ0OqHWi-BW4eAmqqDXCN1xWzJFEgOKoesPbVU-BxsnU8-5ahqLnnQyryYkEDZRNWEMmVrhVOiU6bW_G6LD4M9QxLcgYOlEdRbxvyMFV3jCoHrPqle8F-MNcmExBvZtS_LKZsux39EjJVdOoRYjk0wit4D2haZ5ohRiUaOL830blV0GBSWlXbEcuv3D7sACK5Va3-aZ1vDmOWqM"/>
+</div>
+<p class="font-bold text-lg">Meeting</p>
+</div>
+<!-- Card 3 -->
+<div class="space-y-4" data-purpose="space-card">
+<div class="aspect-[4/3] bg-gray-200 card-rounded overflow-hidden">
+<img alt="Diskusi Santai" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVMUa-c6DvAoUdnesOJQvNLSevDcItKT8LNNnVFysOoB3wraXxPqvktX_q14kXAdfQZ2WPa4PyAxKr5ejgrpdNuH5HFNXYZuPuUA6WoDt6Oj-rusgxgPbLkRnhumpE7g_WXmtQwtrfXRwuBBhIzB62dZQX2Qw5eQx9QdCdFIBMQOdTFAVGGDLZR-BdglkrLkgyz5ZweG9jhEsM3kHUeW-n64w0SSQaQMFNZ34Uscmjzv5UJiT3ij1iQXr3eB8TEzpFJ359gQn6f_U"/>
+</div>
+<p class="font-bold text-lg">Diskusi Santai</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SpaceSection -->
+<!-- BEGIN: BazarProgram -->
+<section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-2 gap-12 items-center bg-gray-50 p-8 md:p-12 card-rounded">
+<div class="space-y-6">
+<h3 class="text-sm font-bold uppercase tracking-widest text-gray-500">BAZAR / FUNDRAISING PROGRAM</h3>
+<h2 class="text-3xl font-extrabold">Paket Bazar untuk Komunitas &amp; Organisasi</h2>
+<p class="text-gray-600 leading-relaxed">
+            Program khusus yang membantu komunitas dan organisasi mengadakan bazar sebagai cara kreatif untuk penambahan dana event.
+          </p>
+<button class="btn-black uppercase tracking-wider">AJUKAN KOLABORASI &gt;&gt;</button>
+</div>
+<div class="aspect-video bg-gray-200 card-rounded overflow-hidden">
+<img alt="Bazar Program" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjHLuwpvTS0KIFiTzet_sYgTqo88A9IY00QjyyfuqPP57pJFDUplpQ1rXOC9wFyDxTomXCEmrQVIY_LXkfKShHsC65BlkX-q-cn_aQX6RZPE52bCrR9FmzEaicLCWZ0hp09XWPssAZKxWN1l89KQE-vI6TCl8bN8AbHH7VX3OomfFrAp6ig886GqP8SKUCqvdOirSvC-Jtky9rgbz-GsY-k3fZmBEn7lEvXW7mB_MXQioVgM9tM3mv5TAqa7OqIJoW8z8HhyUWaTU"/>
+</div>
+</div>
+</section>
+<!-- END: BazarProgram -->
+<!-- BEGIN: TekoholicSection -->
+<section class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h2 class="text-3xl font-extrabold mb-12 uppercase tracking-widest">TEKOHOLIC</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+<div class="aspect-square bg-gray-200 card-rounded overflow-hidden">
+<img alt="Tekoholic 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuJDIodwnFlT_g85ajU_xFrIcoKfuduv7oMK38X9aTjh9md5iAbk9bFUQ9TREM2FKxAO412cW_AASUyN24Cdn4xgV39y_-5-ndP2owSwwVwpF-NaEtxEt4svel_G-pZzdVAksYoVBCTFqIwjGb--7QbQKuR_ka-kBAX9iTOE9dP_tNZHhmBjaGaT1VQ3T4UYeFXBATh9Iegs6rBMoU8123antVi4vFaSUekqWzHALofEZYZ3Xc8TLAUbN_p40l16d-jqbblIKv70U"/>
+</div>
+<div class="aspect-square bg-gray-200 card-rounded overflow-hidden">
+<img alt="Tekoholic 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBubnqcEqKOZAorSgAVll11LUIMkKQvJuFP4GcPdG7ihH6fmQ-dT179RDt3Bfzue6UaHYvkYBHRpW309ffH7Gawj0upT3VlGYEIyaERra-S_vkaEISm4QqSkUXg3dWv9WhUQLnGvcF9zLETM4dCoMzjBjSnKNMtADON37lfFue4I0dh8FuT8VmtNOc4gR4O-8fsOP7CgD04yZvxzPlgnSgUwVVeCvzVSLHci7kApAuf41lODywjEir7NmtzZBQ5v3hFLKl512iUFhk"/>
+</div>
+<div class="aspect-square bg-gray-200 card-rounded overflow-hidden">
+<img alt="Tekoholic 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC9e1duCQrmC2BqC6xOAgu1B2NW4TbyqiO7-FS90YMCLNiBUdIUmzSDhtjWKQLe7wx1aTgkXZ5_YaqERueDk4qEBtXUqqDTANTsTk89IaJl8mXZfEkkA90gKZEXPTfP9-VCEm0z4-5-_d3i-joZ69-L1HsK6HxsplNs4Y8BEm-w2CUXx6DBRrANBZtjitVK52jSrj4I67Ta3KxkYXv86MFeZcDPWWLHBQ-kwMq_BMvDb4emOrmuK3yWAnLYHYxZTSx8IvJi1AqjOs"/>
+</div>
+<div class="aspect-square bg-gray-200 card-rounded overflow-hidden">
+<img alt="Tekoholic 4" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXz0zfctyn3_cq_VaWeB681jlP98Shk_ApesXlJHLOQ0w5YJm8RnqtlWlaSKQpIaYZov0U3Eht__aXyvJ2N_s_OhXkpbldVZw-W4I_3EGfF83LjV7eW7rv8M77T4uwZZB9ZVbVF_g1fQatl5n6BsFFCkxzJdPlZGVfnxVKuNfGUN4AwgVjvQgAVS_wBuPJgJSaFPBwv9MFxIx-6JMb51zd0EjpKrUxWI0bD-q_tdm08c8fsTmDD7pW0SoQdji8QN9LOVwbNtDYuIM"/>
+</div>
+</div>
+<a class="text-sm font-semibold text-gray-500 hover:text-black transition-colors" href="#">Klik disini</a>
+</div>
+</section>
+<!-- END: TekoholicSection -->
+<!-- BEGIN: Testimonials -->
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h3 class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-4">TESTIMONI</h3>
+<h2 class="text-3xl font-extrabold mb-12">Apa Kata Mereka</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="aspect-[3/4] bg-gray-200 card-rounded overflow-hidden">
+<img alt="Testimonial 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIc713KP1CarE1q77RRbIkNPJKt9yuFbptYAgKA2ESSRwe_4fsm7m8NiZDuVIgej33KqSkAWFcBHZF5scUkIc_G_d-VcV2MfmP5pob4dCf6Zn0iWYdvf-po2-RyNlJNHVnmOR306MR_hfd7ljg1dwTyzXbvG3w4_VaTo6E_6E42YYZ9-1A6m4HUfP9JNuz4zvh6hozpy_XiVdMW7AWVC9afoCHPUFQCgUselyhfT84NuI6JA97jjBEkDa-jIhWELlbkH4-uwOBizI"/>
+</div>
+<div class="aspect-[3/4] bg-gray-200 card-rounded overflow-hidden">
+<img alt="Testimonial 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChMwQ0sojQbdBRwloaYUi8ULbV4hxF_QGtnIblyE8mEk_DOzIjgGvtPeih5lDD-3YwRN3JuVnE3Gu8sRQs4vP7TJhZmR0sCvNI7J9PliJZ2nQ-iETyOQd5wv6RbmqykeWiPB5sU3mvfkPP3PeLW7vfWFp_YXmc5iN_opLh6dTFXPyU6amzhx6J5I8sn2VCFZmBzlBK9r5UD0M1n0Ccy4RZYuYreEqQncvRbwfWoLtyuF7WnIbEKcDTqthJvDsa_nlfgWhaZdQBMXU"/>
+</div>
+<div class="aspect-[3/4] bg-gray-200 card-rounded overflow-hidden">
+<img alt="Testimonial 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdZ86mNrn571tPfx0JDxISLUNDuFj_35K_jJOS5A2kZK2H5SIfRkL2eanRMkdkfkd0E_SpD_GhsyA44aJg60apbhQ_m5hDN68XTDdFUgZE8Qt2dq9hwBp1QN7APIQPTitApZNi8HUCeAUC3fPawjjcsZJ3p3V2ZeF5zqYMvgR8iOMkTE-5pkRixdP8fmP0rerJTRNfJylB3kEFUk9rMaz_mYOxdhd_bY-zzC0VKUZ4RyHdm2RPuDcgupobXjq667afFijwMpBAAY0"/>
+</div>
+</div>
+<p class="mt-12 font-bold">Follow Us @KopiTeko_id</p>
+</div>
+</section>
+<!-- END: Testimonials -->
+</main>
+<!-- BEGIN: Footer -->
+<footer class="bg-black text-white py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<!-- Brand Info -->
+<div class="md:col-span-4 space-y-6">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-white flex items-center justify-center rounded-lg">
+<span class="text-black font-extrabold text-sm">TEKO</span>
+</div>
+<div>
+<h4 class="text-xl font-bold">Kopi Teko</h4>
+<p class="text-xs text-gray-400">Tempat kopi, cerita, dan komunitas bertemu.</p>
+</div>
+</div>
+<div class="space-y-4 pt-4">
+<p class="text-xs font-bold uppercase text-gray-500">Mitra Kami</p>
+<div class="flex flex-wrap gap-4 items-center">
+<div class="bg-white/10 px-3 py-2 rounded h-10 flex items-center"><span class="text-[10px] font-bold">DEKAT LOKAL</span></div>
+<div class="bg-white/10 px-3 py-2 rounded h-10 flex items-center"><span class="text-[10px] font-bold">RUMAH BUMN</span></div>
+<div class="bg-white/10 px-3 py-2 rounded h-10 flex items-center"><span class="text-[10px] font-bold">BANK BRI</span></div>
+</div>
+</div>
+</div>
+<!-- Links -->
+<div class="md:col-span-3 space-y-6">
+<h4 class="text-sm font-bold uppercase tracking-widest">Tautan Cepat</h4>
+<ul class="space-y-4 text-sm text-gray-400">
+<li><a class="hover:text-white transition-colors" href="#">Menu</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Home</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Community</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Bazar Program</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Testimoni</a></li>
+</ul>
+</div>
+<!-- Location -->
+<div class="md:col-span-5 space-y-6">
+<h4 class="text-sm font-bold uppercase tracking-widest">OUR LOCATION</h4>
+<p class="text-sm text-gray-400 leading-relaxed">
+            Jl. Cokonuri Raya No.5, Gn. Sari, Kec. Rappocini,<br/>
+            Kota Makassar, Sulawesi Selatan 90221
+          </p>
+<div class="aspect-video w-full bg-gray-800 card-rounded overflow-hidden">
+<!-- Simulated Google Map Embed -->
+<img alt="Map Location" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJBlPoMtaTPGFwm0DLf7-Dz-CHLc11mZQXQofa8Qm_cqdBnxU41GT7IYuF-5xt9Nd8FwS6nMC3RqiHnshzGH2wGs5-zLnMEWeVJQ7MHvcvKYlPMHyvjFIowcL0AHerxZoJu81DdjA1UTZfXcq0xEAc_jVdStLAsePF_J5Q0MUeIsQV5OFPEYSv7LIyTytVEoC55T8WYWKlR8ai57bkGB1aXTcpU4Mje-lq_dRrTQP-09x5SEPMdYE1X-oJdOV_bQJ0CULtC53x1LE"/>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 mt-16 pt-8 text-center text-xs text-gray-500">
+        © 2024 Kopi Teko. All rights reserved.
+      </div>
+</div>
+</footer>
+<!-- END: Footer -->
+</body></html>
