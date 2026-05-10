@@ -1,283 +1,1111 @@
 <!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kopi Teko – Venue Bazar & Gathering Makassar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brown: #6F4E37;
+    --orange: #CC5500;
+    --orange-light: #e86a1a;
+    --cream: #fdf6ee;
+    --white: #FFFFFF;
+    --gray: #f5f0ea;
+    --text: #3b2514;
+    --muted: #8a6a55;
+    --card-bg: #6F4E37;
+  }
 
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Kopi Teko - Where Coffee Meets Community</title>
-<!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Google Fonts: Inter (Sans-serif) -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<style data-purpose="typography">
-    body {
-      font-family: 'Inter', sans-serif;
+  :root {
+  --brown: #6F4E37;
+  --orange: #CC5500;
+
+  /* TAMBAHKAN INI DI SINI */
+  --h1: clamp(2.2rem, 4vw, 3rem);
+  --h2: clamp(1.8rem, 3vw, 2.4rem);
+  --h3: 1.4rem;
+  --p: 1rem;
+}
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+section {
+    padding: 80px 0; /* semua section konsisten */
+}
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 64px;
+    box-shadow: 0 2px 12px rgba(74,44,10,.08);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Mochiy Pop One', sans-serif; font-size: 1.1rem; color: var(--brown); }
+  .nav-logo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
+  .nav-logo span { color: var(--brown); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--text); font-size: .9rem; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover { color: var(--orange); }
+  .nav-cta {
+    background: var(--brown); color: var(--white);
+    padding: 9px 20px; border-radius: 30px;
+    font-size: .85rem; font-weight: 600; text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+    transition: background .2s, transform .15s;
+  }
+  .nav-cta:hover { background: var(--orange); transform: scale(1.04); }
+/* ── RESET & REPAIR HERO ── */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Pastikan tinggi full layar */
+    display: flex;
+    align-items: center; /* Konten di tengah secara vertikal */
+    justify-content: flex-start; /* Konten mepet ke kiri */
+    padding: 0 8%;
+    overflow: hidden;
+    background: #000; /* Warna dasar jika video belum muat */
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.8; /* Sedikit gelap agar teks lebih tajam */
+}
+
+.hero-content {
+    margin-top: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1,
+.hero-content p {
+    color: #fff;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(204, 85, 0, 0.2);
+    border: 1px solid var(--orange);
+    color: #ff9d5c;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+}
+
+/* ── MENGECILKAN TULISAN HERO ── */
+.hero-content h1 {
+  font-size: var(--h1);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+/* Garis Kuning Melengkung & Berjarak */
+.highlight {
+    position: relative;
+    white-space: nowrap;
+    color: var(--orange);
+    display: inline-block;
+}
+
+.highlight::after {
+    content: "";
+    position: absolute;
+    left: -5%;
+    bottom: -10px; /* Jarak dari teks agar tidak nempel */
+    width: 110%;
+    height: 15px; /* Ketebalan garis */
+    background: #FFD700;
+    z-index: -1;
+    border-radius: 60% 40% 70% 30% / 50%; /* Efek melengkung organik */
+    transform: rotate(-1.5deg); /* Sedikit miring natural */
+}
+
+.hero-content p {
+    font-size: 1.1rem !important; /* Ukuran sub-judul/deskripsi agar lebih ramping */
+    max-width: 600px; /* Supaya teks tidak terlalu lebar ke samping */
+    margin-bottom: 30px;
+}
+
+/* Mengatur grid menjadi 2 kolom dan 2 baris yang ukurannya FIXED */
+/* Update Grid untuk Galeri agar mirip section 'Kenapa Kami' */
+.cerita-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 kolom (kiri-kanan) */
+  gap: 20px; /* Jarak antar gambar */
+  margin: 0 auto;
+  max-width: 1200px; /* Menjaga lebar maksimal agar tidak terlalu lebar di desktop */
+}
+
+.cerita-grid .card {
+  width: 100%;
+}
+
+.cerita-grid .card img {
+  width: 100%; 
+  height: 350px; /* Tinggi gambar disamakan dengan section 'Kenapa Kami' */
+  object-fit: cover;
+  border-radius: 25px; /* Border radius melengkung tajam sesuai permintaan */
+  display: block;
+  transition: transform .3s;
+}
+
+/* Efek hover agar interaktif */
+.cerita-grid .card img:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive: Di HP berubah jadi 1 kolom agar tidak terlalu sempit */
+@media (max-width: 768px) {
+  .cerita-grid {
+    grid-template-columns: 1fr;
+  }
+  .cerita-grid .card img {
+    height: 250px; /* Di HP tinggi dikurangi sedikit */
+  }
+}
+
+/* Penyesuaian untuk tampilan HP agar tidak kebesaran */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem !important;
     }
-    h1, h2, h3, h4 {
-      font-weight: 800;
-      letter-spacing: -0.025em;
+    .hero-content p {
+        font-size: 1rem !important;
     }
-  </style>
-<style data-purpose="custom-styling">
-    .btn-black {
-      background-color: #000;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      font-weight: 700;
-      font-size: 0.75rem;
-      letter-spacing: 0.05em;
-      transition: opacity 0.2s;
+}
+
+/* Tombol Simetris & Berdesain */
+.hero-btns {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background: var(--orange);
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.btn-primary:hover, .btn-outline:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+/* ── VIEW MORE LINK STYLE ── */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.view-more-container {
+    text-align: center;
+    margin-top: 30px; /* Membuat posisi lebih turun ke bawah */
+    margin-bottom: 20px;
+}
+
+.btn-view-more {
+    display: inline-flex;
+    align-items: center;
+    color: var(--brown); /* Mengubah warna jadi cokelat */
+    font-size: 0.85rem; /* Ukuran lebih kecil */
+    font-weight: 500;
+    text-decoration: none; /* Menghilangkan garis bawah default */
+    letter-spacing: 0.03em;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.btn-view-more:hover {
+    color: var(--orange); /* Berubah orange saat di-hover agar interaktif */
+    opacity: 1;
+    text-decoration: underline; /* Garis bawah muncul hanya saat di-hover */
+}
+
+/* Ukuran icon kecil di samping tulisan */
+.btn-view-more svg {
+    width: 14px;
+    height: 14px;
+    margin-left: 6px;
+}
+
+
+  /* ── MITRA ── */
+  .mitra {
+    background: var(--white);
+    padding: 56px 5%;
+    text-align: center;
+  }
+
+  .mitra h3 {
+  font-size: var(--h2);
+  font-weight: 800;
+  color: var(--brown);
+}
+
+.mitra-desc {
+  font-size: 1.1rem; /* biar proporsional sama judul */
+  line-height: 1.8;
+  max-width: 700px; /* lebih lebar biar enak dibaca */
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.5px;
+}
+
+.mitra-desc {
+  font-size: 1.1rem; /* biar proporsional sama judul */
+  line-height: 1.8;
+  max-width: 700px; /* lebih lebar biar enak dibaca */
+}
+
+.mitra {
+  padding: 80px 5%; /* samain dengan section lain */
+}
+
+  .mitra-desc { color: var(--text); font-size: .92rem; line-height: 1.7; margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; text-align: center; }
+  .mitra-logos { display: flex; justify-content: center; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .partner-badge {
+    background: #e0e0e0;
+    border-radius: 14px;
+    width: 220px; height: 110px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    font-size: .8rem; color: var(--muted); font-weight: 600;
+  }
+  .partner-badge img {
+    max-width: 160px; max-height: 70px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: .7;
+  }
+
+  /* ── WHY ── */
+  .why {
+    padding: 80px 5%;
+    text-align: center;
+    background: var(--white);
+  }
+  .section-label { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--orange); margin-bottom: 10px; }
+    .section-title {
+  font-size: var(--h2);
+  font-weight: 800;
+  color: var(--brown);
+}
+  .section-sub { color: var(--muted); font-size: .95rem; max-width: 560px; margin: 0 auto 48px; line-height: 1.7; }
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ubah jadi 3 kolom */
+    gap: 20px; /* Jarak antar foto diperlebar sedikit */
+    margin-bottom: 0;
+  }
+  
+  .gallery-grid img {
+    width: 100%; 
+    height: 350px; /* Foto dibuat lebih tinggi agar lebih besar */
+    object-fit: cover;
+    border-radius: 25px; /* Border radius lebih melengkung kyk di contoh */
+    transition: transform .3s;
+  }
+
+  
+  /* ── SECTION PRICING & BAZAR FEATURES ── */
+.pricing {
+    padding: 80px 8%;
+    background: var(--white);
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.pricing-header h5 {
+    color: var(--orange);
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.pricing-header h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #745239;
+    margin-bottom: 10px;
+}
+
+.pricing-header p {
+    color: #8d6e53;
+    font-size: 1.1rem;
+}
+
+/* Row Kotak Fitur Atas */
+.bazar-features {
+    display: grid; /* Biar sejajar ke samping */
+    grid-template-columns: 1fr 1fr; /* Jadi 2 kolom */
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto; /* Tengahin */
+}
+
+.feature-box {
+    background: #745239; /* Warna cokelat sesuai gambar */
+    color: #fff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.feature-box h4 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.feature-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+/* Responsive buat di HP */
+@media (max-width: 768px) {
+    .pricing-header h2 { font-size: 2.2rem; }
+    .bazar-features {
+        grid-template-columns: 1fr;
     }
-    .btn-black:hover {
-      opacity: 0.8;
+}
+
+  /* ── HARGA ── */
+  .harga {
+    background: var(--white);
+    padding: 72px 5%;
+    text-align: center;
+  }
+  .harga .section-title { color: var(--brown); }
+  .harga .section-sub { color: var(--muted); }
+  .harga .section-label { color: var(--orange); }
+  .harga-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 760px; margin: 0 auto 32px; }
+  .harga-card {
+    background: var(--brown);
+    border-radius: 16px; padding: 32px; text-align: center;
+  }
+  .harga-card h4 {
+    color: var(--white);
+    font-size: 1rem; font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .harga-card p { color: rgba(255,255,255,.85); font-size: .9rem; line-height: 1.75; text-align: center; }
+
+/* ── BAZAR SECTION REDESIGN ── */
+.bazar {
+    padding: 100px 8%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: var(--white);
+}
+
+.bazar-content {
+    flex: 1;
+}
+
+.bazar-content h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #745239; /* Cokelat sesuai foto */
+    margin-bottom: 20px;
+}
+
+.bazar-content h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #8d6e53;
+    margin-bottom: 15px;
+}
+
+.bazar-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #8d6e53;
+    max-width: 500px;
+    margin-bottom: 35px;
+}
+
+/* Tombol Orange Tebal */
+.btn-bazar {
+    display: inline-block;
+    background: #f07800; /* Warna orange cerah sesuai foto */
+    color: var(--white);
+    padding: 14px 40px;
+    border-radius: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(240, 120, 0, 0.3);
+    transition: 0.3s;
+}
+
+.btn-bazar:hover {
+    transform: translateY(-3px);
+    background: #d66a00;
+}
+
+/* Image Menu Samping */
+.bazar-image {
+    flex: 1.2; /* Dibuat sedikit lebih lebar dari teks */
+}
+
+.bazar-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    /* Shadow halus di sekeliling menu */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .bazar {
+        flex-direction: column;
+        text-align: left;
+        padding: 60px 5%;
     }
-    .card-rounded {
-      border-radius: 12px;
+    .bazar-content h2 { font-size: 1.8rem; }
+    .bazar-content h3 { font-size: 1.3rem; }
+}
+   /* ── TESTIMONI ── */
+  .testimoni { padding: 72px 5%; background: var(--cream); text-align: center; }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; align-items: stretch; }
+  .testi-card {
+    background: var(--white); border-radius: 20px; padding: 24px;
+    box-shadow: 0 4px 24px rgba(74,44,10,.09);
+    text-align: left; display: flex; flex-direction: column; gap: 14px;
+    position: relative;
+    margin-top: 28px;
+    height: 100%;
+  }
+  .testi-quote-badge {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: var(--orange); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; font-weight: 900; line-height: 1;
+    font-family: Georgia, serif;
+    position: absolute;
+    top: -26px;
+    left: 20px;
+    box-shadow: 0 4px 14px rgba(204,85,0,.35);
+    letter-spacing: -2px;
+    padding-bottom: 4px;
+  }
+  .testi-header { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+  .testi-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--gray); color: var(--brown);
+    border: 2px solid #e0d5cc;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: .9rem; flex-shrink: 0;
+  }
+  .testi-name { font-weight: 600; font-size: .88rem; color: var(--text); }
+  .testi-role { font-size: .75rem; color: var(--muted); }
+  .stars { color: #f5a623; font-size: .9rem; letter-spacing: 2px; }
+  .testi-card .testi-quote { font-size: .88rem; color: var(--text); line-height: 1.65; font-style: normal; font-weight: 500; min-height: 48px; }
+  .testi-img { width: 100%; aspect-ratio: 16 / 10; height: 160px; object-fit: cover; border-radius: 12px; margin-top: auto; display: block; }
+
+  /* ── FAQ ── */
+  .faq { padding: 72px 5%; background: var(--white); max-width: 760px; margin: 0 auto; }
+  .faq-title { text-align: center; margin-bottom: 8px; }
+  .faq-sub { text-align: center; color: var(--muted); font-size: .9rem; margin-bottom: 40px; }
+  .faq-item {
+    border: 1px solid #e8e0d6; border-radius: 12px; margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .faq-q {
+    padding: 18px 20px; font-weight: 600; font-size: .9rem;
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    background: var(--white); transition: background .2s;
+    user-select: none;
+  }
+  .faq-q:hover { background: var(--gray); }
+  .faq-q .icon { font-size: 1.2rem; transition: transform .3s; color: var(--orange); }
+  .faq-item.open .faq-q .icon { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    padding: 0 20px;
+    font-size: .88rem; color: var(--muted); line-height: 1.7;
+    transition: max-height .35s ease, padding .3s;
+  }
+  .faq-item.open .faq-a { max-height: 200px; padding: 0 20px 18px; }
+
+  /* ── CTA BOTTOM ── */
+  .cta-bottom {
+    background: var(--white);
+    padding: 72px 5%; text-align: center;
+  }
+  .cta-bottom-card {
+    background: var(--orange);
+    border-radius: 24px;
+    padding: 56px 48px;
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .cta-bottom h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 800;
+    color: var(--white); margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .cta-bottom p { color: rgba(255,255,255,.9); max-width: 480px; margin: 0 auto 32px; font-size: .92rem; line-height: 1.7; }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-10px); }
+    60% { transform: translateY(-4px); }
+  }
+  .btn-white {
+    background: var(--white); color: var(--orange);
+    padding: 14px 36px; border-radius: 30px; font-weight: 600;
+    font-size: .92rem; text-decoration: none; display: inline-block;
+    animation: bounce 2s ease infinite;
+    transition: box-shadow .2s;
+  }
+  .btn-white:hover { box-shadow: 0 8px 24px rgba(0,0,0,.18); animation: none; transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #FFFFFF; color: var(--muted);
+    padding: 56px 5% 32px;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 40px;
+    border-top: 2px solid #e8ddd4;
+  }
+  .footer-brand p { font-size: .85rem; line-height: 1.7; margin-top: 10px; color: var(--muted); }
+  .footer-col h5 { color: var(--brown); font-size: .9rem; font-weight: 700; margin-bottom: 16px; }
+  .footer-col a { display: block; color: var(--muted); text-decoration: none; font-size: .85rem; margin-bottom: 8px; transition: color .2s; }
+  .footer-col a:hover { color: var(--orange); }
+  .footer-location p { font-size: .85rem; line-height: 1.7; }
+  .footer-map {
+    width: 100%; height: 150px; border-radius: 10px; object-fit: cover;
+    margin-top: 12px; border: 2px solid rgba(255,255,255,.1);
+    display: block;
+  }
+  .footer-bottom {
+    background: #f5f0ea; text-align: center;
+    padding: 16px 5%; font-size: .78rem; color: var(--muted);
+  }
+  .footer-logo { font-family: 'Mochiy Pop One', sans-serif; font-size: 1.3rem; color: var(--brown); }
+  .footer-logo span { color: var(--brown); }
+
+  .footer-mitra-logos { display: flex; flex-direction: column; gap: 10px; }
+  .footer-mitra-badge {
+    background: #f0ebe4; border-radius: 10px;
+    width: 130px; height: 52px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .footer-mitra-badge img {
+    max-width: 100px; max-height: 36px;
+    object-fit: contain;
+  }
+  .partner-badge {
+    background: #f0ebe4; border-radius: 12px;
+    padding: 20px 40px; font-weight: 700; font-size: .85rem;
+    color: var(--brown); display: flex; align-items: center; justify-content: center;
+    min-width: 140px; min-height: 80px;
+  }
+
+  /* ── HAMBURGER ── */
+  .hamburger {
+    display: none;
+    flex-direction: column; justify-content: center; gap: 5px;
+    cursor: pointer; padding: 4px;
+    background: none; border: none;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 2.5px;
+    background: var(--brown); border-radius: 4px;
+    transition: transform .3s, opacity .3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed; top: 64px; left: 0; right: 0;
+    background: var(--white);
+    box-shadow: 0 8px 24px rgba(74,44,10,.12);
+    z-index: 99;
+    flex-direction: column;
+    padding: 16px 5% 24px;
+    gap: 4px;
+  }
+  .mobile-menu.open { display: flex !important; }
+  .mobile-menu a {
+    text-decoration: none; color: var(--text);
+    font-size: .95rem; font-weight: 500;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0ebe4;
+    transition: color .2s;
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--orange); }
+  .mobile-menu a.mobile-cta {
+    background: var(--brown); color: var(--white);
+    text-align: center; border-radius: 30px;
+    padding: 13px; font-weight: 700; border: none;
+    margin-top: 8px;
+  }
+  .mobile-menu a.mobile-cta:hover { background: var(--orange); color: var(--white); }
+  
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 4%; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .hero { flex-direction: column; padding: 60px 5% 50px; }
+    .hero-image { display: none; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .harga-cards { grid-template-columns: 1fr; }
+    .bazar { flex-direction: column; }
+    .bazar-card { max-width: 100%; }
+    .cerita-grid, .testi-grid { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr 1fr; }
+    .bazar-content { text-align: center; }
+    .bazar-content .section-label,
+    .bazar-content h2,
+    .bazar-content p { text-align: center; }
+    .bazar-content .btn-primary { display: inline-block; }
+  }
+  @media (max-width: 560px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; }
+  }
+
+/* ── RESPONSIVE MOBILE (RATA TENGAH) ── */
+@media (max-width: 768px) {
+    .hero {
+        justify-content: center; /* Konten ke tengah secara horizontal */
+        padding: 0 5%;
+        text-align: center;
     }
-  </style>
+
+    .hero-content {
+        text-align: center; /* Semua teks jadi rata tengah */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Badge & Button ikut ke tengah */
+        margin-top: 20px;
+    }
+
+.hero h1 {
+    color: #FFFFFF;
+    font-size: clamp(2rem, 4vw, 3rem); /* lebih kecil & clean */
+    font-weight: 700; /* biar nggak terlalu berat */
+    line-height: 1.3;
+}
+
+.hero p {
+    font-size: 0.95rem; /* lebih kecil */
+    line-height: 1.6;
+}
+
+    .hero-btns {
+        flex-direction: column; /* Tombol jadi susun atas-bawah di HP */
+        width: 100%;
+        max-width: 300px; /* Batasi lebar tombol agar tidak terlalu lebar */
+        gap: 12px;
+    }
+
+    .btn-primary, .btn-outline {
+        width: 100%; /* Tombol memenuhi lebar container di HP */
+        padding: 12px 20px;
+    }
+
+    .highlight::after {
+        width: 100%; /* Sesuaikan panjang garis kuning di HP */
+        left: 0;
+        bottom: -8px;
+    }
+}
+
+</style>
 </head>
-<body class="bg-white text-black antialiased">
-<!-- BEGIN: NavigationBar -->
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-<!-- Logo -->
-<div class="flex items-center gap-2">
-<div class="w-10 h-10 bg-black flex items-center justify-center rounded-lg">
-<span class="text-white font-bold text-xs">TEKO</span>
-</div>
-<span class="text-xl font-extrabold">Kopi Teko</span>
-</div>
-<!-- Desktop Menu -->
-<div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-600">
-<a class="hover:text-black transition-colors" href="#">Home</a>
-<a class="hover:text-black transition-colors" href="#">Menu</a>
-<a class="hover:text-black transition-colors" href="#">Community</a>
-<a class="hover:text-black transition-colors" href="#">Bazar Program</a>
-<a class="hover:text-black transition-colors" href="#">Testimoni</a>
-</div>
-<!-- Action Button -->
-<div>
-<a class="btn-black rounded-full flex items-center gap-2" href="#">
-<svg class="h-4 w-4" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-          Find A Kopi Teko
-        </a>
-</div>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="Asset/Image/logo.kopi-teko.jpg" alt="Logo Kopi Teko">
+    Kopi <span>Teko</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#beranda">Beranda</a></li>
+    <li><a href="#fasilitas">Fasilitas</a></li>
+    <li><a href="#harga">Harga</a></li>
+    <li><a href="#reservasi">Reservasi</a></li>
+    <li><a href="#testimoni">Testimoni</a></li>
+  </ul>
+  <a href="https://www.google.com/maps/search/?api=1&query=Kopi%20Teko%2C%20Jl.%20Cakranur%20Raya%20No.5%2C%20Gn.%20Sari%2C%20Rappocini%2C%20Makassar" target="_blank" rel="noopener" class="nav-cta">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Find a Kopi Teko
+  </a>
+  <button class="hamburger" id="hamburger" type="button" aria-label="Buka menu" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
-</header>
-<!-- END: NavigationBar -->
-<!-- BEGIN: HeroSection -->
-<section class="w-full" data-purpose="hero">
-<div class="w-full aspect-[21/9] bg-gray-200 overflow-hidden">
-<!-- Placeholder for large hero image -->
-<img alt="Hero Image" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvYFQfKPy57XQIxj3P_u_P3lS_nBX6Gsh6-bf2bvDNrtLuGDB4uNBVGeSJCcaCt90wzD_zHt8yA4GkqhpPDoecxuR3yTC9We0onyadz3fguQvnJPxQmknnKpo85BKQZpP2LvHV7so2-ZNDeS3dfdDZ9HsQW9WgONq2sYH9tw0KDVsvyEo3rHTM2FIkMOYUOhUVsIc6tAsD-uew2SEMr40CogiXHp-rJ9zi5Wp-1QVvQCyl1X2eM8HIhn8yb5YQMzKWdWjvhhl5N8o"/>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#beranda" onclick="closeMenu()">Beranda</a>
+  <a href="#fasilitas" onclick="closeMenu()">Fasilitas</a>
+  <a href="#harga" onclick="closeMenu()">Harga</a>
+  <a href="#reservasi" onclick="closeMenu()">Reservasi</a>
+  <a href="#testimoni" onclick="closeMenu()">Testimoni</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Kopi%20Teko%2C%20Jl.%20Cakranur%20Raya%20No.5%2C%20Gn.%20Sari%2C%20Rappocini%2C%20Makassar" target="_blank" rel="noopener" class="mobile-cta" onclick="closeMenu()">Find a Kopi Teko</a>
 </div>
+
+<!-- HERO -->
+<section class="hero" id="beranda">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="Asset/Video/video.hero-banner.mp4" type="video/mp4">
+  </video>
+  
+  <div class="hero-content reveal">
+    <div class="hero-badge">#1 CAMPUS VENUE SPESIALIS IN MAKASSAR</div>
+    <h1>
+      Bikin Event Gak Pakai Ribet!<br>
+      Venue Bazar & Gathering<br>
+      Kapasitas 200 Orang,<br>
+      <span class="highlight">Cuma 50 Ribu.</span>
+    </h1>
+    <p>Spesialis venue bazar kampus dengan fasilitas lengkap dan harga mahasiswa. Solusi tepat untuk makrab, acoustic night, hingga pameran UMKM.</p>
+    
+    <div class="hero-btns">
+      <a href="https://wa.me/628242844348" target="_blank" rel="noopener" class="btn-primary">Book Venue Sekarang</a>
+      <a href="#fasilitas" class="btn-outline">Lihat Fasilitas</a>
+    </div>
+  </div>
 </section>
-<!-- END: HeroSection -->
-<main>
-<!-- BEGIN: OurCoffeeSection -->
-<section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl">Where Coffee Meets Community</h2>
-</div>
-<div class="grid md:grid-cols-2 gap-12 items-center">
-<div class="space-y-6">
-<h3 class="text-sm font-bold uppercase tracking-widest text-gray-500">OUR COFFEE</h3>
-<h2 class="text-3xl font-extrabold leading-tight">Ngopi Bareng, Ide Mengalir</h2>
-<p class="text-gray-600 leading-relaxed max-w-lg">
-            Lebih dari sekadar tempat ngopi, ini adalah ruang untuk bertemu, berdiskusi, dan berbagi inspirasi. Nikmati kopi pilihan sambil menghabiskan waktu bersama teman, komunitas, dan organisasi kampus dalam suasana yang hangat, nyaman, dan penuh energi positif.
-          </p>
-<button class="btn-black uppercase tracking-wider">RESERV TABLE &gt;&gt;</button>
-</div>
-<div class="aspect-square bg-gray-100 card-rounded overflow-hidden">
-<img alt="Coffee Ambiance" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmFaEcKZauy8PpCAJOhr_ijWE0Sy1idqOJOgHwTCjjoYWhk7uH-vRCPcFl5YpPdbM9gJR9W8hN5IkBNwA66Rn3S7NhmkRPj7_FrFOCDDn7xxtImi_oDEhni8j0pTkn4z3gJTlP3vxazoeOrj46e5T3LwftUF6PP5JO6mJGMJeBZjvQyFo4-Dalcg9s0AccG4GljKct22jbXE5JZzPAHz48FwHaJlgu2VBcuWxxV5gOSbiXFNXRA-5LoIMVdYUs-AWMaR8Eaa_2jdc"/>
-</div>
-</div>
+
+<!-- MITRA -->
+<section class="mitra">
+  <h3>Didukung Oleh Mitra Terpercaya</h3>
+  <p class="mitra-desc"><strong>Kopi Teko</strong> didukung oleh mitra-mitra terpercaya untuk memberikan layanan terbaik dan mendukung pertumbuhan UMKM di Indonesia</p>
+  <div class="mitra-logos">
+    <div class="partner-badge">
+      <img src="Asset/Image/dekat-lokal.png" alt="Dekat Lokal">
+    </div>
+    <div class="partner-badge">
+      <img src="Asset/Image/rumah-bumn.png" alt="Rumah BUMN Makassar">
+    </div>
+    <div class="partner-badge">
+      <img src="Asset/Image/bank-bri.png" alt="Bank BRI">
+    </div>
+  </div>
 </section>
-<!-- END: OurCoffeeSection -->
-<!-- BEGIN: TrustedPartners -->
-<section class="py-16 bg-white">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-<h2 class="text-2xl mb-4">Didukung Oleh Mitra Terpercaya</h2>
-<p class="text-gray-600 mb-12 max-w-2xl mx-auto">
-<strong>Kopi Teko</strong> didukung oleh mitra-mitra terpercaya untuk memberikan layanan terbaik dan mendukung pertumbuhan UMKM di Indonesia
-        </p>
-<div class="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
-<div class="aspect-video bg-gray-200 card-rounded flex items-center justify-center">
-<span class="text-gray-400 font-bold">MITRA 1</span>
+
+<!-- WHY KOPI TEKO -->
+<section class="why" id="fasilitas">
+  <p class="section-label">Kenapa Kami?</p>
+  <h2 class="section-title">MENGAPA KOPI TEKO?</h2>
+  <p class="section-sub">Segalanya sudah kami siapkan, kamu tinggal bawa masa. Dapat menampung hingga 200 orang. Pilihan tata letak yang fleksibel, mulai dari susunan tempat duduk ala teater hingga kelompok kolaboratif. Ideal untuk seminar besar, lokakarya klub, atau pameran kreatif.</p>
+<div class="gallery-grid reveal">
+    <img src="Asset/Image/panggung-kopi.teko.png" alt="Ruang 1">
+    <img src="Asset/Image/depan-panggung.kopi.teko.png" alt="Ruang 2">
+    <img src="Asset/Image/tempat-2,kopi.teko.png" alt="Ruang 3">
 </div>
-<div class="aspect-video bg-gray-200 card-rounded flex items-center justify-center">
-<span class="text-gray-400 font-bold">MITRA 2</span>
-</div>
-<div class="aspect-video bg-gray-200 card-rounded flex items-center justify-center">
-<span class="text-gray-400 font-bold">MITRA 3</span>
-</div>
-</div>
-</div>
+
+  </div>
 </section>
-<!-- END: TrustedPartners -->
-<!-- BEGIN: OurMenuSection -->
-<section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid md:grid-cols-2 gap-12 items-center">
-<div class="aspect-square bg-gray-200 card-rounded order-2 md:order-1 overflow-hidden">
-<img alt="Menu Preview" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPjNfZbm0TvBu4RD-5Yj7474C1vpDa3gacXXrUZcV_6eLft7lLzOgnP2iXxvmDY2zh4Ehx7BZ9Y_Q766IKzhyOTHuhZ3mSxXh-OW62OklQniVBoQyoXa2ZAOquThZrs6pl3VUnRPzJpTtckFBybqTqNEZOcQFN1CMltlgj7wrRkl4vuzxwTa1fGe7-pT1r3SDmznK4qwSZdNBWj_syGO421R3_aMxHaInvXRbK7QltMxWcOnFrV4kwKw4HO68WWVQPxcmdpp7nqwA"/>
-</div>
-<div class="space-y-6 md:text-right order-1 md:order-2 flex flex-col items-start md:items-end">
-<h3 class="text-sm font-bold uppercase tracking-widest text-gray-500">OUR MENU</h3>
-<h2 class="text-3xl font-extrabold">Menu yang Menemani Setiap Obrolan</h2>
-<p class="text-gray-600 leading-relaxed max-w-lg md:ml-auto">
-            Pilihan kopi, minuman segar, dan camilan lezat yang sempurna untuk menemani waktu santai bersama teman dan komunitas.
-          </p>
-<button class="btn-black uppercase tracking-wider">EXPLORE MORE &gt;&gt;</button>
-</div>
-</div>
+
+<!-- HARGA -->
+<section class="pricing" id="harga">
+    <div class="pricing-header reveal">
+        <h5>HARGA TERJANGKAU</h5>
+        <h2>HARGA MAHASISWA</h2>
+        <p>Rp 50k Sudah include fasilitas</p>
+    </div>
+
+    <!-- INI BAGIAN YANG HARUS DIPERBAIKI STRUKTURNYA -->
+    <div class="bazar-features reveal">
+        <div class="feature-box">
+            <h4>Fasilitas All-in</h4>
+            <p>Sudah termasuk Sound System + Mic, Meja-Kursi, hingga Panggung (penyelenggara tidak perlu sewa alat luar lagi).</p>
+        </div>
+        <div class="feature-box">
+            <h4>Kenyamanan Pengunjung</h4>
+            <p>Toilet terpisah, Kipas tambahan, dan Gratis Parkir. Tersedia Board Games & Card Games untuk selingan acara.</p>
+        </div>
+    </div>
 </section>
-<!-- END: OurMenuSection -->
-<!-- BEGIN: SpaceSection -->
-<section class="py-20 bg-white">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-<h3 class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-4">SPACE SECTION</h3>
-<h2 class="text-3xl font-extrabold mb-4">Ruang Berkumpul Komunitas</h2>
-<p class="text-gray-600 mb-12">Tempat yang nyaman untuk diskusi, meeting organisasi, hingga merancang ide besar bersama teman.</p>
-<div class="grid md:grid-cols-3 gap-8">
-<!-- Card 1 -->
-<div class="space-y-4" data-purpose="space-card">
-<div class="aspect-[4/3] bg-gray-200 card-rounded overflow-hidden">
-<img alt="Study Group" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdheAeYLteB1kKO7kzNY5S76jqqtCgoWjV8qNZ3ooyfq_uKV-qp4cVb0mVNXsadonr4356bPmPUlHmM4WXTQCVhxqxqMd6YG-q1V1EhgC8_r7k_Maf4y3tOhxmw2P6NkPMwO_ej20UdxOJ3BbVB9uGYkZ2Ot_6GVCplCnXDLwomwX-_P0i_KSmKwno275iF8yMmnnWPhsKan6fMSJDU3vtPME-v06vJEQ8CgehL2bdQ_1HoBGonbRWzcZjuyB4GOODy698az-UOVE"/>
-</div>
-<p class="font-bold text-lg">Study Group</p>
-</div>
-<!-- Card 2 -->
-<div class="space-y-4" data-purpose="space-card">
-<div class="aspect-[4/3] bg-gray-200 card-rounded overflow-hidden">
-<img alt="Meeting" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAUpw3ox-rCoTh0kfUXw7pCfC9gdxL3mq_WAj4IzNK2KJFYKSVVxfH-nNfe-0KPJ0OqHWi-BW4eAmqqDXCN1xWzJFEgOKoesPbVU-BxsnU8-5ahqLnnQyryYkEDZRNWEMmVrhVOiU6bW_G6LD4M9QxLcgYOlEdRbxvyMFV3jCoHrPqle8F-MNcmExBvZtS_LKZsux39EjJVdOoRYjk0wit4D2haZ5ohRiUaOL830blV0GBSWlXbEcuv3D7sACK5Va3-aZ1vDmOWqM"/>
-</div>
-<p class="font-bold text-lg">Meeting</p>
-</div>
-<!-- Card 3 -->
-<div class="space-y-4" data-purpose="space-card">
-<div class="aspect-[4/3] bg-gray-200 card-rounded overflow-hidden">
-<img alt="Diskusi Santai" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVMUa-c6DvAoUdnesOJQvNLSevDcItKT8LNNnVFysOoB3wraXxPqvktX_q14kXAdfQZ2WPa4PyAxKr5ejgrpdNuH5HFNXYZuPuUA6WoDt6Oj-rusgxgPbLkRnhumpE7g_WXmtQwtrfXRwuBBhIzB62dZQX2Qw5eQx9QdCdFIBMQOdTFAVGGDLZR-BdglkrLkgyz5ZweG9jhEsM3kHUeW-n64w0SSQaQMFNZ34Uscmjzv5UJiT3ij1iQXr3eB8TEzpFJ359gQn6f_U"/>
-</div>
-<p class="font-bold text-lg">Diskusi Santai</p>
-</div>
-</div>
-</div>
+<!-- BAZAR PROGRAM -->
+<section class="bazar" id="bazar">
+  <div class="bazar-content reveal">
+    <h2>BAZAR / FUNDRAISING PROGRAM</h2>
+    <h3>Paket Bazar untuk Komunitas & Organisasi</h3>
+    <p>Program khusus yang membantu komunitas dan organisasi mengadakan bazar sebagai cara kreatif untuk penambahan dana event</p>
+    <a href="https://wa.me/628242844348" target="_blank" rel="noopener" class="btn-bazar">Ajukan Bazar >></a>
+  </div>
+  
+  <div class="bazar-image reveal">
+    <!-- Pastikan ganti src dengan path file menu asli kamu nanti -->
+    <img src="Asset/Image/menu.jpeg" alt="Harga Bazar Kopi Teko">
+  </div>
 </section>
-<!-- END: SpaceSection -->
-<!-- BEGIN: BazarProgram -->
-<section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid md:grid-cols-2 gap-12 items-center bg-gray-50 p-8 md:p-12 card-rounded">
-<div class="space-y-6">
-<h3 class="text-sm font-bold uppercase tracking-widest text-gray-500">BAZAR / FUNDRAISING PROGRAM</h3>
-<h2 class="text-3xl font-extrabold">Paket Bazar untuk Komunitas &amp; Organisasi</h2>
-<p class="text-gray-600 leading-relaxed">
-            Program khusus yang membantu komunitas dan organisasi mengadakan bazar sebagai cara kreatif untuk penambahan dana event.
-          </p>
-<button class="btn-black uppercase tracking-wider">AJUKAN KOLABORASI &gt;&gt;</button>
-</div>
-<div class="aspect-video bg-gray-200 card-rounded overflow-hidden">
-<img alt="Bazar Program" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjHLuwpvTS0KIFiTzet_sYgTqo88A9IY00QjyyfuqPP57pJFDUplpQ1rXOC9wFyDxTomXCEmrQVIY_LXkfKShHsC65BlkX-q-cn_aQX6RZPE52bCrR9FmzEaicLCWZ0hp09XWPssAZKxWN1l89KQE-vI6TCl8bN8AbHH7VX3OomfFrAp6ig886GqP8SKUCqvdOirSvC-Jtky9rgbz-GsY-k3fZmBEn7lEvXW7mB_MXQioVgM9tM3mv5TAqa7OqIJoW8z8HhyUWaTU"/>
-</div>
-</div>
+
+<!-- CERITA -->
+<section class="cerita" style="padding: 80px 5%; text-align: center; background: var(--white);">
+  <p class="section-label">Galeri</p>
+  <h2 class="section-title">Cerita Dari Kopi Teko</h2>
+  <p class="section-sub">Momen kebersamaan dan keseruan event yang telah berlangsung di venue kami.</p>
+  
+  <div class="cerita-grid reveal">
+    <div class="card">
+      <img src="Asset/Image/komunitas-1.jpg" alt="Event 1">
+    </div>
+    <div class="card">
+      <img src="Asset/Image/komunitas-3.jpg" alt="Event 2">
+    </div>
+    <div class="card">
+      <img src="Asset/Image/komunitas-4.jpg" alt="Event 3">
+    </div>
+    <div class="card">
+      <img src="Asset/Image/komunitas-7.jpg" alt="Event 4">
+    </div>
+  </div>
 </section>
-<!-- END: BazarProgram -->
-<!-- BEGIN: TekoholicSection -->
-<section class="py-20 bg-white">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-<h2 class="text-3xl font-extrabold mb-12 uppercase tracking-widest">TEKOHOLIC</h2>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-<div class="aspect-square bg-gray-200 card-rounded overflow-hidden">
-<img alt="Tekoholic 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuJDIodwnFlT_g85ajU_xFrIcoKfuduv7oMK38X9aTjh9md5iAbk9bFUQ9TREM2FKxAO412cW_AASUyN24Cdn4xgV39y_-5-ndP2owSwwVwpF-NaEtxEt4svel_G-pZzdVAksYoVBCTFqIwjGb--7QbQKuR_ka-kBAX9iTOE9dP_tNZHhmBjaGaT1VQ3T4UYeFXBATh9Iegs6rBMoU8123antVi4vFaSUekqWzHALofEZYZ3Xc8TLAUbN_p40l16d-jqbblIKv70U"/>
-</div>
-<div class="aspect-square bg-gray-200 card-rounded overflow-hidden">
-<img alt="Tekoholic 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBubnqcEqKOZAorSgAVll11LUIMkKQvJuFP4GcPdG7ihH6fmQ-dT179RDt3Bfzue6UaHYvkYBHRpW309ffH7Gawj0upT3VlGYEIyaERra-S_vkaEISm4QqSkUXg3dWv9WhUQLnGvcF9zLETM4dCoMzjBjSnKNMtADON37lfFue4I0dh8FuT8VmtNOc4gR4O-8fsOP7CgD04yZvxzPlgnSgUwVVeCvzVSLHci7kApAuf41lODywjEir7NmtzZBQ5v3hFLKl512iUFhk"/>
-</div>
-<div class="aspect-square bg-gray-200 card-rounded overflow-hidden">
-<img alt="Tekoholic 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC9e1duCQrmC2BqC6xOAgu1B2NW4TbyqiO7-FS90YMCLNiBUdIUmzSDhtjWKQLe7wx1aTgkXZ5_YaqERueDk4qEBtXUqqDTANTsTk89IaJl8mXZfEkkA90gKZEXPTfP9-VCEm0z4-5-_d3i-joZ69-L1HsK6HxsplNs4Y8BEm-w2CUXx6DBRrANBZtjitVK52jSrj4I67Ta3KxkYXv86MFeZcDPWWLHBQ-kwMq_BMvDb4emOrmuK3yWAnLYHYxZTSx8IvJi1AqjOs"/>
-</div>
-<div class="aspect-square bg-gray-200 card-rounded overflow-hidden">
-<img alt="Tekoholic 4" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXz0zfctyn3_cq_VaWeB681jlP98Shk_ApesXlJHLOQ0w5YJm8RnqtlWlaSKQpIaYZov0U3Eht__aXyvJ2N_s_OhXkpbldVZw-W4I_3EGfF83LjV7eW7rv8M77T4uwZZB9ZVbVF_g1fQatl5n6BsFFCkxzJdPlZGVfnxVKuNfGUN4AwgVjvQgAVS_wBuPJgJSaFPBwv9MFxIx-6JMb51zd0EjpKrUxWI0bD-q_tdm08c8fsTmDD7pW0SoQdji8QN9LOVwbNtDYuIM"/>
-</div>
-</div>
-<a class="text-sm font-semibold text-gray-500 hover:text-black transition-colors" href="#">Klik disini</a>
-</div>
-</section>
-<!-- END: TekoholicSection -->
-<!-- BEGIN: Testimonials -->
-<section class="py-20 bg-gray-50">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-<h3 class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-4">TESTIMONI</h3>
-<h2 class="text-3xl font-extrabold mb-12">Apa Kata Mereka</h2>
-<div class="grid md:grid-cols-3 gap-8">
-<div class="aspect-[3/4] bg-gray-200 card-rounded overflow-hidden">
-<img alt="Testimonial 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIc713KP1CarE1q77RRbIkNPJKt9yuFbptYAgKA2ESSRwe_4fsm7m8NiZDuVIgej33KqSkAWFcBHZF5scUkIc_G_d-VcV2MfmP5pob4dCf6Zn0iWYdvf-po2-RyNlJNHVnmOR306MR_hfd7ljg1dwTyzXbvG3w4_VaTo6E_6E42YYZ9-1A6m4HUfP9JNuz4zvh6hozpy_XiVdMW7AWVC9afoCHPUFQCgUselyhfT84NuI6JA97jjBEkDa-jIhWELlbkH4-uwOBizI"/>
-</div>
-<div class="aspect-[3/4] bg-gray-200 card-rounded overflow-hidden">
-<img alt="Testimonial 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChMwQ0sojQbdBRwloaYUi8ULbV4hxF_QGtnIblyE8mEk_DOzIjgGvtPeih5lDD-3YwRN3JuVnE3Gu8sRQs4vP7TJhZmR0sCvNI7J9PliJZ2nQ-iETyOQd5wv6RbmqykeWiPB5sU3mvfkPP3PeLW7vfWFp_YXmc5iN_opLh6dTFXPyU6amzhx6J5I8sn2VCFZmBzlBK9r5UD0M1n0Ccy4RZYuYreEqQncvRbwfWoLtyuF7WnIbEKcDTqthJvDsa_nlfgWhaZdQBMXU"/>
-</div>
-<div class="aspect-[3/4] bg-gray-200 card-rounded overflow-hidden">
-<img alt="Testimonial 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdZ86mNrn571tPfx0JDxISLUNDuFj_35K_jJOS5A2kZK2H5SIfRkL2eanRMkdkfkd0E_SpD_GhsyA44aJg60apbhQ_m5hDN68XTDdFUgZE8Qt2dq9hwBp1QN7APIQPTitApZNi8HUCeAUC3fPawjjcsZJ3p3V2ZeF5zqYMvgR8iOMkTE-5pkRixdP8fmP0rerJTRNfJylB3kEFUk9rMaz_mYOxdhd_bY-zzC0VKUZ4RyHdm2RPuDcgupobXjq667afFijwMpBAAY0"/>
-</div>
-</div>
-<p class="mt-12 font-bold">Follow Us @KopiTeko_id</p>
-</div>
-</section>
-<!-- END: Testimonials -->
-</main>
-<!-- BEGIN: Footer -->
-<footer class="bg-black text-white py-16">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
-<!-- Brand Info -->
-<div class="md:col-span-4 space-y-6">
-<div class="flex items-center gap-3">
-<div class="w-12 h-12 bg-white flex items-center justify-center rounded-lg">
-<span class="text-black font-extrabold text-sm">TEKO</span>
-</div>
-<div>
-<h4 class="text-xl font-bold">Kopi Teko</h4>
-<p class="text-xs text-gray-400">Tempat kopi, cerita, dan komunitas bertemu.</p>
-</div>
-</div>
-<div class="space-y-4 pt-4">
-<p class="text-xs font-bold uppercase text-gray-500">Mitra Kami</p>
-<div class="flex flex-wrap gap-4 items-center">
-<div class="bg-white/10 px-3 py-2 rounded h-10 flex items-center"><span class="text-[10px] font-bold">DEKAT LOKAL</span></div>
-<div class="bg-white/10 px-3 py-2 rounded h-10 flex items-center"><span class="text-[10px] font-bold">RUMAH BUMN</span></div>
-<div class="bg-white/10 px-3 py-2 rounded h-10 flex items-center"><span class="text-[10px] font-bold">BANK BRI</span></div>
-</div>
-</div>
-</div>
-<!-- Links -->
-<div class="md:col-span-3 space-y-6">
-<h4 class="text-sm font-bold uppercase tracking-widest">Tautan Cepat</h4>
-<ul class="space-y-4 text-sm text-gray-400">
-<li><a class="hover:text-white transition-colors" href="#">Menu</a></li>
-<li><a class="hover:text-white transition-colors" href="#">Home</a></li>
-<li><a class="hover:text-white transition-colors" href="#">Community</a></li>
-<li><a class="hover:text-white transition-colors" href="#">Bazar Program</a></li>
-<li><a class="hover:text-white transition-colors" href="#">Testimoni</a></li>
-</ul>
-</div>
-<!-- Location -->
-<div class="md:col-span-5 space-y-6">
-<h4 class="text-sm font-bold uppercase tracking-widest">OUR LOCATION</h4>
-<p class="text-sm text-gray-400 leading-relaxed">
-            Jl. Cokonuri Raya No.5, Gn. Sari, Kec. Rappocini,<br/>
-            Kota Makassar, Sulawesi Selatan 90221
-          </p>
-<div class="aspect-video w-full bg-gray-800 card-rounded overflow-hidden">
-<!-- Simulated Google Map Embed -->
-<img alt="Map Location" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJBlPoMtaTPGFwm0DLf7-Dz-CHLc11mZQXQofa8Qm_cqdBnxU41GT7IYuF-5xt9Nd8FwS6nMC3RqiHnshzGH2wGs5-zLnMEWeVJQ7MHvcvKYlPMHyvjFIowcL0AHerxZoJu81DdjA1UTZfXcq0xEAc_jVdStLAsePF_J5Q0MUeIsQV5OFPEYSv7LIyTytVEoC55T8WYWKlR8ai57bkGB1aXTcpU4Mje-lq_dRrTQP-09x5SEPMdYE1X-oJdOV_bQJ0CULtC53x1LE"/>
-</div>
-</div>
-</div>
-<div class="border-t border-white/10 mt-16 pt-8 text-center text-xs text-gray-500">
-        © 2024 Kopi Teko. All rights reserved.
+
+<!-- TESTIMONI -->
+<section class="testimoni" id="testimoni">
+  <p class="section-label">Review Nyata</p>
+  <h2 class="section-title">Testimoni</h2>
+  <p class="section-sub">Apa Kata Mereka</p>
+  <div class="testi-grid reveal">
+    <div class="testi-card">
+      <div class="testi-quote-badge">❝</div>
+      <div class="testi-header">
+        <div class="testi-avatar">A</div>
+        <div>
+          <div class="testi-name">Andini – Mahasiswa</div>
+          <div class="testi-role">Universitas Negeri Makassar</div>
+        </div>
       </div>
-</div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-quote">"Suasa oke, harga murahh sangat cocok untuk adakan kegiatan bazzar"</p>
+      <img class="testi-img" src="Asset/Image/komunitas-bazar.1.jpeg" alt="Testimoni Andini">
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote-badge">❝</div>
+      <div class="testi-header">
+        <div class="testi-avatar">F</div>
+        <div>
+          <div class="testi-name">Farhan Ramadhan – Mahasiswa</div>
+          <div class="testi-role">Universitas Negeri Makassar</div>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-quote">"Cocok banget untuk para mahasiswa yang cari tempat kumpul"</p>
+      <img class="testi-img" src="Asset/Image/komunitas-bazar.2.jpeg" alt="Testimoni Farhan">
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote-badge">❝</div>
+      <div class="testi-header">
+        <div class="testi-avatar">D</div>
+        <div>
+          <div class="testi-name">Dewi Aura – Mahasiswa</div>
+          <div class="testi-role">Universitas Hassanudin</div>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-quote">"Bazarnya oke banget bisa nambah dana kegiatan"</p>
+      <img class="testi-img" src="Asset/Image/komunitas-bazar.3.jpeg" alt="Testimoni Dewi">
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding: 72px 5%; background: var(--white);" id="faq">
+  <div style="max-width:760px;margin:0 auto;">
+    <p class="section-label" style="text-align:center">FAQ</p>
+    <h2 class="section-title faq-title">Pusat Bantuan</h2>
+    <p class="faq-sub">Pertanyaan yang paling sering ditanyakan oleh pelanggan Kopi Teko</p>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Berapa kapasitas maksimal venue Kopi Teko? <span class="icon">+</span></div>
+      <div class="faq-a">Venue Kopi Teko dapat menampung hingga 230 orang dengan berbagai konfigurasi tempat duduk, mulai dari teater, classroom, hingga standing party.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Apakah bisa pesan di luar jam operasional? <span class="icon">+</span></div>
+      <div class="faq-a">Ya, kami melayani reservasi untuk event malam hari dan akhir pekan. Hubungi tim kami untuk informasi ketersediaan jadwal.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Apakah parkir tersedia dan gratis? <span class="icon">+</span></div>
+      <div class="faq-a">Parkir tersedia luas dan gratis untuk semua tamu acara yang menggunakan venue Kopi Teko.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Bagaimana cara melakukan reservasi? <span class="icon">+</span></div>
+      <div class="faq-a">Kamu dapat melakukan reservasi melalui tombol "Book Venue Sekarang" di halaman ini, atau langsung hubungi kami via WhatsApp untuk respon lebih cepat.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BOTTOM -->
+<section class="cta-bottom" id="reservasi">
+  <div class="cta-bottom-card reveal">
+    <h2>Ruang Kolaborasi Sempurna untuk Organisasi & Komunitas Anda!</h2>
+    <p>Fasilitasi rapat, seminar, atau workshop komunitas Anda dengan suasana yang nyaman dan dukungan fasilitas lengkap di Kopi Teko.</p>
+    <a href="https://wa.me/628242844348" target="_blank" rel="noopener" class="btn-white">Reservasi Sekarang</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="footer-logo">Kopi <span>Teko</span></div>
+    <p>Tempat kopi, cerita, dan komunitas bertemu. Venue terbaik untuk event mahasiswa dan UMKM di Makassar.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Tautan Cepat</h5>
+    <a href="#beranda">Beranda</a>
+    <a href="#fasilitas">Fasilitas</a>
+    <a href="#harga">Harga</a>
+    <a href="#reservasi">Reservasi</a>
+    <a href="#testimoni">Testimoni</a>
+  </div>
+  <div class="footer-col">
+    <h5>Mitra Kami</h5>
+    <div class="footer-mitra-logos">
+      <div class="footer-mitra-badge">
+        <img src="Asset/Image/dekat-lokal.png" alt="Dekat Lokal">
+      </div>
+      <div class="footer-mitra-badge">
+        <img src="Asset/Image/rumah-bumn.png" alt="Rumah BUMN Makassar">
+      </div>
+      <div class="footer-mitra-badge">
+        <img src="Asset/Image/bank-bri.png" alt="Bank BRI">
+      </div>
+    </div>
+  </div>
+  <div class="footer-col footer-location">
+    <h5>OUR LOCATION</h5>
+    <p style="color:var(--muted);font-size:.83rem;">Jl. Cakranur Raya No.5, Grn. Sari, Kec. Rappocini,<br>Kota Makassar, Sulawesi Selatan 90221</p>
+    <iframe
+      class="footer-map"
+      title="Peta Lokasi Kopi Teko"
+      src="https://www.google.com/maps?q=Kopi%20Teko%2C%20Jl.%20Cakranur%20Raya%20No.5%2C%20Gn.%20Sari%2C%20Rappocini%2C%20Makassar&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen>
+    </iframe>
+  </div>
 </footer>
-<!-- END: Footer -->
-</body></html>
+<div class="footer-bottom">© 2024 Kopi Teko. All rights reserved. Made with ☕ in Makassar.</div>
+
+<script>
+  // Mobile navbar menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function setMenuState(isOpen) {
+    hamburger.classList.toggle('open', isOpen);
+    mobileMenu.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    hamburger.setAttribute('aria-label', isOpen ? 'Tutup menu' : 'Buka menu');
+    mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+  }
+
+  function toggleMenu() {
+    setMenuState(!mobileMenu.classList.contains('open'));
+  }
+
+  function closeMenu() {
+    setMenuState(false);
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMenu();
+  });
+
+  // FAQ toggle
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('open');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
