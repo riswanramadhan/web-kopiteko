@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kopiteko.dekatlokal.com/sitemap.xml
